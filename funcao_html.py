@@ -1,4 +1,4 @@
-def gerar_php_teste(singular, plural):
+def gerar_php_html(singular, plural):
     modelo_file = "modelos/modelo_index_blade.php"
     output_file = f"resultado/index.blade.php"
 
@@ -19,5 +19,5 @@ def gerar_php_teste(singular, plural):
 # Os inputs
 SINGULAR = input("Digite o valor de SINGULAR: ")
 PLURAL = input("Digite o valor de PLURAL: ")
-file_name = gerar_php_teste(SINGULAR, PLURAL)
+file_name = gerar_php_html(SINGULAR, PLURAL)
 print(f"Arquivo '{file_name}' foi criado com sucesso.")
