@@ -1,6 +1,6 @@
 # Capyview
 <p align="center">
-  <img width="300" height="300" src="capyview.png" alt="Logo do Capyview">
+  <img width="300" height="300" src="images/capyview.png" alt="Logo do Capyview">
 </p>
 **Capyview** é uma ferramenta para a automatização da geração de HTML, interfaces e caminhos em projetos PHP/Laravel.
 
