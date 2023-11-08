@@ -1,6 +1,6 @@
 def gerar_php_teste(singular, plural):
     modelo_file = "modelos/modelo_index_blade.php"
-    output_file = f"index.blade.php"
+    output_file = f"resultado/index.blade.php"
 
     # Lê o modelo
     with open(modelo_file, 'r', encoding='utf-8') as modelo:
