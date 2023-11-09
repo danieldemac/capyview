@@ -1,9 +1,9 @@
 @extends('voyager::master')
-@section('page_title', 'Página criada - Daniel')
+@section('page_title', 'Página criada - user_dependent')
 
 @section('page_header')
     <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome</h1>
-    <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-Daniel" id="bt-create-Daniel">
+    <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-user_dependent" id="bt-create-user_dependent">
         <i class="voyager-plus"></i> Adicionar
     </button>
     <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#model-delete-user_dependents" id="bt-delete-user_dependents" disabled="true">
@@ -36,19 +36,19 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-create-Daniel" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal-create-user_dependent" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <section id="loading-create-Daniel"><div id="loading-content-create-Daniel"></div></section>
+        <section id="loading-create-user_dependent"><div id="loading-content-create-user_dependent"></div></section>
         <div class="modal-content">
             <div class="modal-header"><h4 class="modal-title">Adicionar Atestados</h4><hr></div>
             <div class="modal-body">
                 <div class="alert alert-danger"  role="alert" style="display: none;"></div>
                 <div class="alert alert-success" role="alert" style="display: none;"></div>
  
-                <form id="form-create-Daniel" enctype="multipart/form-data">
+                <form id="form-create-user_dependent" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group mb-3">
-                            <input type="hidden" class="form-control" id="id-Daniel" value="">
+                            <input type="hidden" class="form-control" id="id-user_dependent" value="">
                             <label class="form-label" for="clinic-name">Nome da Clinica*</label>
                             <input type="text" class="form-control required" id="clinic-name">
                         </div>
@@ -95,15 +95,15 @@
 
                     <div class="form-row">
                         <div class="form-group mb-3">
-                            <label class="form-label" for="Daniel-data">Data do Atestado</label>
-                            <input type="text" class="form-control required" id="Daniel-data">
+                            <label class="form-label" for="user_dependent-data">Data do Atestado</label>
+                            <input type="text" class="form-control required" id="user_dependent-data">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group mb-3">
-                            <label class="form-label" for="Daniel-companion">Companhante</label><br>
-                            <input type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" class="toggle" id="Daniel-companion" checked>
+                            <label class="form-label" for="user_dependent-companion">Companhante</label><br>
+                            <input type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" class="toggle" id="user_dependent-companion" checked>
                         </div>
                     </div>
 
@@ -119,20 +119,20 @@
             <div class="modal-footer">
                 <hr>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-success" id="submit-update-create-Daniel">Salvar</button>
+                <button type="button" class="btn btn-success" id="submit-update-create-user_dependent">Salvar</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal" id="model-delete-Daniel">
+<div class="modal" id="model-delete-user_dependent">
     <div class="modal-dialog">
         <section id="loading-delete-id"><div id="loading-content-delete-id"></div></section>
         <div class="modal-content">
             <div class="modal-header"><h4 class="modal-title">Excluir Atestado</h4><hr></div>
             <div class="modal-body"><p>Deseja <b>EXCLUIR</b> o atestado ?</p></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="submit-delete-Daniel">Sim</button>
+                <button type="button" class="btn btn-success" id="submit-delete-user_dependent">Sim</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
             </div>
         </div>
@@ -157,7 +157,7 @@
     <div class="modal-dialog">
         <div class="modal-content" >
             <div class="modal-header"><h4 class="modal-title">Visualizar Arquivo</h4><hr></div>
-            <div class="modal-body"><div id="Daniel-view-file"></div></div>
+            <div class="modal-body"><div id="user_dependent-view-file"></div></div>
             <div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button></div>
         </div>
     </div>
@@ -198,7 +198,7 @@
     <script src="{{ asset('js/bootstrap-datepicker.pt.min.js') }}" type="text/javascript"></script>
 
     <script>
-        $("#Daniel-data").datepicker({
+        $("#user_dependent-data").datepicker({
             daysOfWeekDisabled: [0, 7],
             todayHighlight: false,
             language: 'pt-BR',
