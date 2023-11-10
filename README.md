@@ -54,10 +54,10 @@ Ao rodar o programa ele vai criar uma base para views, rotas e controllers usand
 
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
+    Tabela.php-->Main.py;
+    Main.py-->Funções;
+    Funções-->resultado;
+    Main.py;-->Tabela.php;
 ```
 
 ## Licença
