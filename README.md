@@ -52,13 +52,6 @@ CREATE TABLE tabela_teste
 ```
 Ao rodar o programa ele vai criar uma base para views, rotas e controllers usando essa tabela como base. Mais funcionalidades e modelos estão sendo elaborados para esse projeto.
 
-```mermaid
-graph TD;
-    Tabela.php-->Main.py;
-    Main.py-->Funções;
-    Funções-->resultado;
-    Main.py;-->Tabela.php;
-```
 
 ## Licença
 
