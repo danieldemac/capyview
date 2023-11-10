@@ -18,7 +18,7 @@ Com o **Capyview**, você pode:
 
   ## Estrutura do Projeto
 
-A o repositório está organizado da seguinte forma:
+Este repositório está organizado da seguinte forma:
 
 - `__pycache__`: é um diretório usado pelo Python para armazenar arquivos de cache que contêm versões compiladas (bytecode) de módulos Python para melhorar o desempenho de importação.
 - `images`: Pasta com a logo do Capyview.
