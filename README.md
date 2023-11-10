@@ -52,6 +52,14 @@ CREATE TABLE tabela_teste
 ```
 Ao rodar o programa ele vai criar uma base para views, rotas e controllers usando essa tabela como base. Mais funcionalidades e modelos estão sendo elaborados para esse projeto.
 
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+```
+
 ## Licença
 
 Este projeto é distribuído sob a [Licença Apache 2.0](https://github.com/danieldemac/capyview/blob/main/LICENSE). Leia o arquivo de licença para obter mais informações.
