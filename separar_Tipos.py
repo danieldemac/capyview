@@ -81,5 +81,5 @@ def gerar_php_userDependent(nomeTabela, num_Id, numero, texto, data):
 
     return output_file
 
-file_name = gerar_php_userDependent(nome_Tabela_str, id_variables_str, numeric_variables_str, text_variables_str, date_variables_str)
-print(f"Arquivo '{file_name}' foi criado com sucesso.")
+file_name_userDependent = gerar_php_userDependent(nome_Tabela_str, id_variables_str, numeric_variables_str, text_variables_str, date_variables_str)
+print(f"Arquivo '{file_name_userDependent}' foi criado com sucesso.")
