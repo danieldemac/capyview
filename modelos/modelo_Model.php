@@ -13,7 +13,7 @@ class UserDependent extends Model
     use HasFactory;
 
     protected $table      = {nome};
-    protected $primaryKey = {num_Id};
+    protected $primaryKey = {num_aspasId};
     protected $fillable   = [{Text}{Numeric}];
     protected $dates      = [{Date}];
 
@@ -27,12 +27,12 @@ class UserDependent extends Model
                                         ->orWhere(DB::raw('lower(relationship)'), "LIKE", "%".$search."%") 
                                         ->orWhere(DB::raw('lower(birth)'), "LIKE", "%".$search."%");
                                 });
-                            })->where('id_user', Auth::user()->id);
+                            })->where('id_user', Auth::user()->{num_Id});
 
             return [
                 'count_data'=>$a->count(),
                 'data'      =>$a->offset($start)->limit($limit)->orderBy($order, $dir)->get(), 
-                'count_all' =>static::select(DB::raw("count(id) as count_all"))->get()->first()->count_all
+                'count_all' =>static::select(DB::raw("count({num_Id}) as count_all"))->get()->first()->count_all
             ];
 
         } catch(Exception $e) {
