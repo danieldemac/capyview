@@ -1,8 +1,8 @@
-# Capyview
+# Automatização Simplificada: Capyview - Uma Ferramenta para Geração de HTML, Interfaces e Rotas em Projetos PHP/Laravel
 <p align="center">
   <img width="300" height="300" src="images/capyview.png" alt="Logo do Capyview">
 </p>
-**Capyview** é uma ferramenta para a automatização da geração de HTML, interfaces e caminhos em projetos PHP/Laravel.
+No mundo do desenvolvimento de projetos PHP/Laravel, a criação de múltiplas páginas, interfaces de usuário e configurações de rotas pode ser uma tarefa demorada e propensa a erros. É nesse cenário desafiador que o “Capyview” surge como uma solução para melhorar a celeridade dos projetos Web. Esta ferramenta é projetada para simplificar e automatizar o processo de desenvolvimento, economizando tempo e esforço na geração de código HTML, criação de interfaces de usuário e configurações de rotas.
 
 [![GitHub](https://img.shields.io/badge/Licença-Apache%202.0-blue)](https://github.com/danieldemac/capyview/blob/main/LICENSE)
 
