@@ -16,6 +16,23 @@ Com o **Capyview**, você pode:
 - Criar interfaces de usuário de maneira eficiente.
 - Definir rotas no Laravel de forma automática.
 
+  ## Estrutura do Projeto
+
+A o repositório está organizado da seguinte forma:
+
+- `__pycache__`: é um diretório usado pelo Python para armazenar arquivos de cache que contêm versões compiladas (bytecode) de módulos Python para melhorar o desempenho de importação.
+- `images`: Pasta com a logo do Capyview.
+- `modelos`: Pasta com os modelos usados como base para criação das views e rotas.
+- `resultado`: Pasta com os resultados das automações.
+- `LICENSE`: [Licença Apache 2.0](https://github.com/danieldemac/capyview/blob/main/LICENSE).
+- `README.md`: O que você está lendo!
+- `funcao_html.py`: Função para criação do html.
+- `funcao_js.py`: Função para criação do JavaScript.
+- `funcao_model.py`: Função para criação do models.
+- `funcao_rota.py`: Função para criação do rotas.
+- `funcoes_repositorio.py`: Repositório de todas as funções.
+- `main.py`: Arquivo principal do programa.
+
 ## Como Usar
 
 O **Capyview** ainda está em desenvolvimento. Em breve, forneceremos instruções detalhadas sobre como instalar e usar a ferramenta em seu projeto PHP/Laravel.
