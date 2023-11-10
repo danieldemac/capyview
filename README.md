@@ -28,8 +28,8 @@ A o repositório está organizado da seguinte forma:
 - `README.md`: O que você está lendo!
 - `funcao_html.py`: Função para criação do html.
 - `funcao_js.py`: Função para criação do JavaScript.
-- `funcao_model.py`: Função para criação do models.
-- `funcao_rota.py`: Função para criação do rotas.
+- `funcao_model.py`: Função para criação do model.
+- `funcao_rota.py`: Função para criação da rotas.
 - `funcoes_repositorio.py`: Repositório de todas as funções.
 - `main.py`: Arquivo principal do programa.
 
