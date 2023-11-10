@@ -1,8 +1,8 @@
-# Automatização Simplificada: Capyview - Uma Ferramenta para Geração de HTML, Interfaces e Rotas em Projetos PHP/Laravel
+# Capyview
 <p align="center">
   <img width="300" height="300" src="images/capyview.png" alt="Logo do Capyview">
 </p>
-No mundo do desenvolvimento de projetos PHP/Laravel, a criação de múltiplas páginas, interfaces de usuário e configurações de rotas pode ser uma tarefa demorada e propensa a erros. É nesse cenário desafiador que o “Capyview” surge como uma solução para melhorar a celeridade dos projetos Web. Esta ferramenta é projetada para simplificar e automatizar o processo de desenvolvimento, economizando tempo e esforço na geração de código HTML, criação de interfaces de usuário e configurações de rotas.
+**Capyview** é uma ferramenta para a automatização da geração de HTML, interfaces e caminhos em projetos PHP/Laravel.
 
 [![GitHub](https://img.shields.io/badge/Licença-Apache%202.0-blue)](https://github.com/danieldemac/capyview/blob/main/LICENSE)
 
@@ -35,11 +35,22 @@ A o repositório está organizado da seguinte forma:
 
 ## Como Usar
 
-O **Capyview** ainda está em desenvolvimento. Em breve, forneceremos instruções detalhadas sobre como instalar e usar a ferramenta em seu projeto PHP/Laravel.
-
-## Contribuições
-
-Estamos ansiosos para receber contribuições da comunidade. Se você tem ideias, sugestões ou deseja contribuir com código, fique à vontade para abrir uma issue ou enviar um pull request. Juntos, podemos tornar o **Capyview** uma ferramenta ainda mais útil.
+No momento o programa funciona apenas no terminal pelo Arquivo `main.py`. Você deve escreve o comando para criação de tabelas dentro de um arquivo chamado `modelos/tabela.php`.
+Exemplo de comando:
+```sql
+CREATE TABLE tabela_teste
+(
+    id bigint,
+    name character varying(200),
+    relationship character varying(50),
+    birth date,
+    created_at timestamp,
+    status "char",
+    updated_at timestamp,
+    deleted_at timestamp
+)
+```
+Ao rodar o programa ele vai criar uma base para views, rotas e controllers usando essa tabela como base. Mais funcionalidades e modelos estão sendo elaborados para esse projeto.
 
 ## Licença
 
