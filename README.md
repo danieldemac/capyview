@@ -2,7 +2,7 @@
 <p align="center">
   <img width="300" height="300" src="images/capyview.png" alt="Logo do Capyview">
 </p>
-_Capyview_ é uma ferramenta para a automatização da geração de HTML, interfaces e caminhos em projetos PHP/Laravel.
+Capyview é uma ferramenta para a automatização da geração de HTML, interfaces e caminhos em projetos PHP/Laravel.
 
 [![GitHub](https://img.shields.io/badge/Licença-Apache%202.0-blue)](https://github.com/danieldemac/capyview/blob/main/LICENSE)
 
