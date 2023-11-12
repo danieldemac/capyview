@@ -38,7 +38,7 @@ Este repositório está organizado da seguinte forma:
 No momento o programa funciona apenas no terminal pelo Arquivo `main.py`. Você deve escreve o comando para criação de tabelas dentro de um arquivo chamado `modelos/tabela.php`.
 Exemplo de comando:
 ```sql
-CREATE TABLE tabela_teste
+CREATE TABLE tabela_testes
 (
     id bigint,
     name character varying(200),
