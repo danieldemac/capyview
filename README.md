@@ -22,6 +22,7 @@ Este repositório está organizado da seguinte forma:
 
 - `__pycache__`: é um diretório usado pelo Python para armazenar arquivos de cache que contêm versões compiladas (bytecode) de módulos Python para melhorar o desempenho de importação.
 - `images`: Pasta com a logo do Capyview.
+- `implementação_testes`: Pasta com testes de novas funcionalidades.
 - `modelos`: Pasta com os modelos usados como base para criação das views e rotas.
 - `resultado`: Pasta com os resultados das automações.
 - `LICENSE`: [Licença Apache 2.0](https://github.com/danieldemac/capyview/blob/main/LICENSE).
