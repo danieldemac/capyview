@@ -60,11 +60,11 @@ Este projeto é distribuído sob a [Licença Apache 2.0](https://github.com/dani
 
 ---
 
-**Capyview** é desenvolvido por [Daniel Cabral]. [GitHub do Projeto](https://github.com/danieldemac/capyview)
+<h2 align="center">Capyview é desenvolvido por [Daniel Cabral]. [GitHub do Projeto](https://github.com/danieldemac/capyview)</h2>
 
-## Installation.
+## Instalação
 
-1. Clone this repository to your local machine:
+1. Crie um clone repository na sua máquina local:
 
 ```bash
 git clone https://github.com/danieldemac/capyview.git
