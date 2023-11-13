@@ -20,18 +20,22 @@ Com o **Capyview**, você pode:
 
 Este repositório está organizado da seguinte forma:
 
-- `__pycache__`: é um diretório usado pelo Python para armazenar arquivos de cache que contêm versões compiladas (bytecode) de módulos Python para melhorar o desempenho de importação.
-- `images`: Pasta com a logo do Capyview.
-- `implementação_testes`: Pasta com testes de novas funcionalidades.
-- `modelos`: Pasta com os modelos usados como base para criação das views e rotas.
-- `resultado`: Pasta com os resultados das automações.
+- `.github/ISSUE_TEMPLATE`: Diretório que contém modelos de issues.
+- `__pycache__`: Diretório utilizado pelo Python para armazenar arquivos de cache contendo versões compiladas (bytecode) de módulos Python, visando melhorar o desempenho de importação.
+- `images`: Pasta que contém a logo do Capyview.
+- `implementação_testes`: Pasta que inclui testes de novas funcionalidades.
+- `modelos`: Pasta que contém modelos usados como base para a criação de views e rotas.
+- `resultado`: Pasta que contém os resultados das automações.
+- `CODE_OF_CONDUCT.md`: Arquivo que foi para refletir as diretrizes de conduta para contribuição no projeto.
+- `CONTRIBUTING.md`: Arquivo que contém informações sobre como contribuir para o projeto.
 - `LICENSE`: [Licença Apache 2.0](https://github.com/danieldemac/capyview/blob/main/LICENSE).
-- `README.md`: O que você está lendo!
-- `funcao_html.py`: Função para criação do html.
-- `funcao_js.py`: Função para criação do JavaScript.
-- `funcao_model.py`: Função para criação do model.
-- `funcao_rota.py`: Função para criação da rota.
-- `funcoes_repositorio.py`: Repositório de todas as funções.
+- `README.md`: Documento que você está lendo agora, contendo informações sobre o projeto.
+- `SECURITY.md`: Arquivo que contem informações sobre políticas de segurança.
+- `funcao_html.py`: Arquivo que contém a função para a criação do HTML.
+- `funcao_js.py`: Arquivo que contém a função para a criação do JavaScript.
+- `funcao_model.py`: Arquivo que contém a função para a criação do model.
+- `funcao_rota.py`: Arquivo que contém a função para a criação da rota.
+- `funcoes_repositorio.py`: Arquivo que serve como repositório para todas as funções.
 - `main.py`: Arquivo principal do programa.
 
 ## Como Usar
