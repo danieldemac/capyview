@@ -1,12 +1,12 @@
 @extends('voyager::master')
-@section('page_title', 'Página criada - user_dependent')
+@section('page_title', 'Página criada - tabela_example')
 
 @section('page_header')
     <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome</h1>
-    <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-user_dependent" id="bt-create-user_dependent">
+    <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-tabela_example" id="bt-create-tabela_example">
         <i class="voyager-plus"></i> Adicionar
     </button>
-    <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#model-delete-user_dependents" id="bt-delete-user_dependents" disabled="true">
+    <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#model-delete-tabela_examples" id="bt-delete-tabela_examples" disabled="true">
         <i class="voyager-trash"></i> Exclusão em massa
     </button>
 @stop
@@ -19,7 +19,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title"></div>
-                    <table id="dt-user_dependents" class="table table-bordered table-hover">
+                    <table id="dt-tabela_examples" class="table table-bordered table-hover">
                         <thead>
                             <tr>
                                 <th></th>
@@ -36,19 +36,19 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-create-user_dependent" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal-create-tabela_example" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <section id="loading-create-user_dependent"><div id="loading-content-create-user_dependent"></div></section>
+        <section id="loading-create-tabela_example"><div id="loading-content-create-tabela_example"></div></section>
         <div class="modal-content">
             <div class="modal-header"><h4 class="modal-title">Adicionar Atestados</h4><hr></div>
             <div class="modal-body">
                 <div class="alert alert-danger"  role="alert" style="display: none;"></div>
                 <div class="alert alert-success" role="alert" style="display: none;"></div>
  
-                <form id="form-create-user_dependent" enctype="multipart/form-data">
+                <form id="form-create-tabela_example" enctype="multipart/form-data">
                     <div class="form-row">
                         <div class="form-group mb-3">
-                            <input type="hidden" class="form-control" id="id-user_dependent" value="">
+                            <input type="hidden" class="form-control" id="id-tabela_example" value="">
                             <label class="form-label" for="clinic-name">Nome da Clinica*</label>
                             <input type="text" class="form-control required" id="clinic-name">
                         </div>
@@ -95,15 +95,15 @@
 
                     <div class="form-row">
                         <div class="form-group mb-3">
-                            <label class="form-label" for="user_dependent-data">Data do Atestado</label>
-                            <input type="text" class="form-control required" id="user_dependent-data">
+                            <label class="form-label" for="tabela_example-data">Data do Atestado</label>
+                            <input type="text" class="form-control required" id="tabela_example-data">
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group mb-3">
-                            <label class="form-label" for="user_dependent-companion">Companhante</label><br>
-                            <input type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" class="toggle" id="user_dependent-companion" checked>
+                            <label class="form-label" for="tabela_example-companion">Companhante</label><br>
+                            <input type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" class="toggle" id="tabela_example-companion" checked>
                         </div>
                     </div>
 
@@ -119,34 +119,34 @@
             <div class="modal-footer">
                 <hr>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-success" id="submit-update-create-user_dependent">Salvar</button>
+                <button type="button" class="btn btn-success" id="submit-update-create-tabela_example">Salvar</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal" id="model-delete-user_dependent">
+<div class="modal" id="model-delete-tabela_example">
     <div class="modal-dialog">
         <section id="loading-delete-id"><div id="loading-content-delete-id"></div></section>
         <div class="modal-content">
             <div class="modal-header"><h4 class="modal-title">Excluir Atestado</h4><hr></div>
             <div class="modal-body"><p>Deseja <b>EXCLUIR</b> o atestado ?</p></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="submit-delete-user_dependent">Sim</button>
+                <button type="button" class="btn btn-success" id="submit-delete-tabela_example">Sim</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal" id="model-delete-user_dependents">
+<div class="modal" id="model-delete-tabela_examples">
     <div class="modal-dialog">
         <section id="loading-delete-ids"><div id="loading-content-delete-ids"></div></section>
         <div class="modal-content">
             <div class="modal-header"><h4 class="modal-title">Excluir Atestado</h4><hr></div>
             <div class="modal-body"><p>Tem certeza que deseja <b>EXCLUIR</b> a(s) Atestado(s) ?</p></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="submit-delete-user_dependents">Sim</button>
+                <button type="button" class="btn btn-danger" id="submit-delete-tabela_examples">Sim</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
             </div>
         </div>
@@ -157,7 +157,7 @@
     <div class="modal-dialog">
         <div class="modal-content" >
             <div class="modal-header"><h4 class="modal-title">Visualizar Arquivo</h4><hr></div>
-            <div class="modal-body"><div id="user_dependent-view-file"></div></div>
+            <div class="modal-body"><div id="tabela_example-view-file"></div></div>
             <div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button></div>
         </div>
     </div>
@@ -193,12 +193,12 @@
     <script type="text/javascript" src="{{ asset('js/data-tables/pdfmake.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/data-tables/vfs_fonts.js') }}"></script>
     
-    <script src="{{ asset('js/user_dependents.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/tabela_examples.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-datepicker.pt.min.js') }}" type="text/javascript"></script>
 
     <script>
-        $("#user_dependent-data").datepicker({
+        $("#tabela_example-data").datepicker({
             daysOfWeekDisabled: [0, 7],
             todayHighlight: false,
             language: 'pt-BR',

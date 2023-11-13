@@ -1,8 +1,8 @@
 <?
-use App\Models\user_dependent;
+use App\Models\tabela_example;
 
-Route::get('/user_dependents', function () {
-    $content = "Rota user_dependent criada.";
-    return view('user_dependents.index');
+Route::get('/tabela_examples', function () {
+    $content = "Rota tabela_example criada.";
+    return view('tabela_examples.index');
 });
-Route::get('get-user_dependents', [user_dependentController::class, 'getAll'])->middleware('auth');
+Route::get('get-tabela_examples', [tabela_exampleController::class, 'getAll'])->middleware('auth');
