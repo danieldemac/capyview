@@ -60,7 +60,7 @@ Este projeto é distribuído sob a [Licença Apache 2.0](https://github.com/dani
 
 ---
 
-<h2 align="center">Capyview é desenvolvido por [Daniel Cabral]. [GitHub do Projeto](https://github.com/danieldemac/capyview)</h2>
+<h2 align="center">Capyview é desenvolvido por <a href='https://github.com/danieldemac'>Daniel Cabral</a>.</h2>
 
 ## Instalação
 
