@@ -1,4 +1,4 @@
-CREATE TABLE user_dependents
+CREATE TABLE tabela_examples
 (
     id bigint,
     name character varying(200),
