@@ -1,4 +1,4 @@
-<h1 align="center">Automatização Simplificada: Capyview - Uma Ferramenta para Geração de HTML, Interfaces e Rotas em Projetos PHP/Laravel</h1> 
+<h1 align="center">Automatização Simplificada: Capyview - Uma Ferramenta para Geração de HTML, Interfaces e Rotas em Projetos PHP/Laravel.</h1> 
 <p align="center">
   <img width="300" height="300" src="images/capyview.png" alt="Logo do Capyview">
 </p>
