@@ -14,7 +14,7 @@ class UserDependent extends Model
 
     protected $table      = "tabela_examples";
     protected $primaryKey = 'id';
-    protected $fillable   = ['name', 'relationship', 'status'];
+    protected $fillable   = ['name', 'relationship', 'status','idade_filho'];
     protected $dates      = ['birth', 'created_at', 'updated_at', 'deleted_at'];
 
     public function getAll($search, $start, $limit, $order, $dir)
@@ -23,9 +23,7 @@ class UserDependent extends Model
             $a = static::select(DB::raw("name, relationship, birth"))
                             ->when($search !== false, function ($query) use ($search) {
                                 $query->where(function($query) use ($search) {
-                                    $query->where(DB::raw('lower(name)'), "LIKE", "%".$search."%") 
-                                        ->orWhere(DB::raw('lower(relationship)'), "LIKE", "%".$search."%") 
-                                        ->orWhere(DB::raw('lower(birth)'), "LIKE", "%".$search."%");
+                                    {query_model}
                                 });
                             })->where('id_user', Auth::user()->id);
 

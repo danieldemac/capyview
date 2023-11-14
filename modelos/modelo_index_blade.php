@@ -46,73 +46,17 @@
                 <div class="alert alert-success" role="alert" style="display: none;"></div>
  
                 <form id="form-create-{singular}" enctype="multipart/form-data">
+
+                <!-- // ESTRUTURA DE REPETIÇÃO -->
                     <div class="form-row">
                         <div class="form-group mb-3">
                             <input type="hidden" class="form-control" id="id-{singular}" value="">
-                            <label class="form-label" for="clinic-name">Nome da Clinica*</label>
-                            <input type="text" class="form-control required" id="clinic-name">
+                            <label class="form-label" for="clinic-name">Idade Filho*</label>
+                            <input type="text" class="form-control required" id="idade-filho">
                         </div>
                     </div>
+                <!-- // ESTRUTURA DE REPETIÇÃO -->
 
-                    <div class="form-row">
-                        <div class="form-group mb-3">
-                            <label class="form-label" for="clinic-phone">Telefone da Clinica*</label>
-                            <input type="text" class="form-control required" id="clinic-phone">
-                        </div>
-                    </div>
-    
-                    <div class="form-row">
-                        <div class="form-group mb-3">
-                            <label class="form-label" for="medical-record">Registo Médico</label>
-                            <input type="text" class="form-control required" id="medical-record">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group mb-3">
-                            <label for="gender" for="cid" form-label>CID</label><br>
-                            <select class="form-control required" id="cid" name="cid">
-                                <option value="0">A00 - Cólera</option>
-                                <option value="1">A00.0 - Cólera Devida a Vibrio Cholerae 01, Biótipo Cholerae</option>
-                                <option value="2">A00.1 - Cólera Devida a Vibrio Cholerae 01, Biótipo El Tor</option>
-                                <option value="3">A00.9 - Cólera Não Especificada</option>
-                                <option value="4">A01 - Febres Tifóide e Paratifóide</option>
-                                <option value="5">A01.0 - Febre Tifóide</option>
-                                <option value="5">A01.1 - Febre Paratifóide A</option>
-                                <option value="7">A01.2 - Febre Paratifóide B</option>
-                                <option value="8">A01.3 - Febre Paratifóide C</option>
-                                <option value="9">A01.4 - Febre Paratifóide Não Especificada</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group mb-3">
-                            <label class="form-label" for="days-away">Dias Afastados</label>
-                            <input type="text" class="form-control required" id="days-away">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group mb-3">
-                            <label class="form-label" for="{singular}-data">Data do Atestado</label>
-                            <input type="text" class="form-control required" id="{singular}-data">
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group mb-3">
-                            <label class="form-label" for="{singular}-companion">Companhante</label><br>
-                            <input type="checkbox" data-toggle="toggle" data-on="Sim" data-off="Não" class="toggle" id="{singular}-companion" checked>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="form-group mb-3">
-                            <label class="form-label" for="file">Arquivo</label><br>
-                            <input type="file" name="file" id="file" class="form-control"/>
-                        </div>
-                    </div>
                 </form>
             </div>
 

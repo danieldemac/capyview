@@ -2,6 +2,8 @@ from funcao_html import gerar_php_Html
 from funcao_model import gerar_php_model
 from funcao_rota import gerar_rota
 from funcao_js import gerar_js
+from funcao_query_model import escrever_query
+from funcao_escrever_query_model import substituir_texto
 
 
 tabela = 'modelos/tabela.php'
@@ -43,7 +45,7 @@ print(" ")
 
 # Os tipos de variáveis
 idVariables = ['bigint', 'bigserial', 'serial']
-numVariables = ['bit', 'tinyint', 'smallint', 'int', 'numeric', 'decimal', 'real', 'float', 'smallmoney', 'money']
+numVariables = ['bit', 'tinyint', 'smallint', 'int', 'numeric', 'decimal', 'real', 'float', 'smallmoney', 'money','integer']
 dateVariables = ['datetime', 'datetime2', 'smalldatetime', 'date', 'time', 'datetimeoffset', 'timestamp']
 textVariables = ['char','"char"', 'varchar', 'text', 'nchar', 'nvarchar', 'ntext', 'binary', 'varbinary', 'image',
                 'character']
@@ -96,11 +98,19 @@ print(" ")
 print("Outras Variáveis: " + other_variables_str)
 print(" ")
 
+teste = ['name', 'relationship', 'status']
+arquivo_origem = 'modelos/modelo_query_model.php'
+arquivo_destino = f'resultado/{nomeTabelaSingular}.php'
 # Criação dos arquivos
-file_name_model = gerar_php_model(nomeTabelaSingular, nome_Tabela_str, id_semAspas, id_variables_str, numeric_variables_str, text_variables_str, date_variables_str)
+
+file_name_model_teste = escrever_query(teste)
+file_name_model = gerar_php_model(nomeTabelaSingular, nome_Tabela_str, id_semAspas, id_variables_str, numeric_variables_str, text_variables_str, date_variables_str, textVariables)
+file_name_model_teste2 = substituir_texto()
+
 file_name_html = gerar_php_Html(nomeTabelaSingular, nomeTabela)
 file_name_js = gerar_js(nomeTabelaSingular, nomeTabela)
 file_name_rota = gerar_rota(nomeTabelaSingular, nomeTabela)
+
 
 print(f"Arquivo '{file_name_html}' foi criado com sucesso.")
 print(" ")
@@ -110,5 +120,5 @@ print(f"Arquivo '{file_name_js}' foi criado com sucesso.")
 print(" ")
 print(f"Arquivo '{file_name_rota}' foi criado com sucesso.")
 print(" ")
-
+print(text_variables_str)
 

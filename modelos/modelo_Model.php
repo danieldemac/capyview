@@ -23,9 +23,7 @@ class UserDependent extends Model
             $a = static::select(DB::raw("name, relationship, birth"))
                             ->when($search !== false, function ($query) use ($search) {
                                 $query->where(function($query) use ($search) {
-                                    $query->where(DB::raw('lower(name)'), "LIKE", "%".$search."%") 
-                                        ->orWhere(DB::raw('lower(relationship)'), "LIKE", "%".$search."%") 
-                                        ->orWhere(DB::raw('lower(birth)'), "LIKE", "%".$search."%");
+                                    {query_model}
                                 });
                             })->where('id_user', Auth::user()->{num_Id});
 
