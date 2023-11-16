@@ -98,16 +98,16 @@ print(" ")
 print("Outras Variáveis: " + other_variables_str)
 print(" ")
 
-arrayTipos = variables_by_type["Numeric"] + variables_by_type["Text"]
+arrayTipos = variables_by_type["Text"] + variables_by_type["Numeric"]
 arquivo_origem = 'modelos/modelo_query_model.php'
 arquivo_destino = f'resultado/{nomeTabelaSingular}.php'
 
 # Criação dos arquivos
 
 #Model
-file_name_model = gerar_php_model(nomeTabelaSingular, nome_Tabela_str, id_semAspas, id_variables_str, numeric_variables_str, text_variables_str, date_variables_str)
+file_name_model = gerar_php_model(nomeTabelaSingular, nome_Tabela_str, id_semAspas, id_variables_str, numeric_variables_str, text_variables_str, date_variables_str, nomeTabela)
 file_query_model = escrever_query(nomeTabelaSingular, arrayTipos)
-file_baixoModel = gerar_php_baixoModel(nomeTabelaSingular)
+file_baixoModel = gerar_php_baixoModel(nomeTabelaSingular, nomeTabela)
 #HTML
 file_name_html = gerar_php_Html(nomeTabelaSingular, nomeTabela)
 #JS
@@ -115,14 +115,23 @@ file_name_js = gerar_js(nomeTabelaSingular, nomeTabela)
 #ROTA
 file_name_rota = gerar_rota(nomeTabelaSingular, nomeTabela)
 
-
+print("---Criando Model---")
+print(" ")
+print(f"Arquivo '{file_name_model}' Primeira parte criada com sucesso.")
+print(f"Arquivo '{file_query_model}' Adicionando as Querys com sucesso.")
+print(f"Arquivo '{file_baixoModel}' foi finalizado com sucesso.")
+print(" ")
+print("---Criando HTML---")
+print(" ")
 print(f"Arquivo '{file_name_html}' foi criado com sucesso.")
 print(" ")
-print(f"Arquivo '{file_name_model}' foi criado com sucesso.")
+print("---Criando JS---")
 print(" ")
 print(f"Arquivo '{file_name_js}' foi criado com sucesso.")
 print(" ")
+print("---Criando ROTA---")
+print(" ")
 print(f"Arquivo '{file_name_rota}' foi criado com sucesso.")
 print(" ")
-print(text_variables_str)
+
 

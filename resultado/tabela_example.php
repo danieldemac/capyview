@@ -20,19 +20,19 @@ class UserDependent extends Model
     public function getAll($search, $start, $limit, $order, $dir)
     {
         try {
-            $a = static::select(DB::raw("name, relationship, birth"))
+            $tabela_examples = static::select(DB::raw("name, relationship, birth"))
                             ->when($search !== false, function ($query) use ($search) {
                                 $query->where(function($query) use ($search) {
-                                $query->where(DB::raw('lower(idade_filho)'),LIKE,%.$search.%)
-                                    ->orWhere(DB::raw('lower(name)'),LIKE,%.$search.%);
-                                    ->orWhere(DB::raw('lower(relationship)'),LIKE,%.$search.%);
-                                    ->orWhere(DB::raw('lower(status)'),LIKE,%.$search.%);
+                                       $query->where('name', 'LIKE', "%".$search."%")
+                                         ->orWhere('relationship', 'LIKE', "%".$search."%")
+                                         ->orWhere('status', 'LIKE', "%".$search."%")
+                                         ->orWhere('idade_filho', 'LIKE', "%".$search."%");
 });
-                            })->where('id_user', Auth::user()->{num_Id});
+                            });
 
             return [
-                'count_data'=>$a->count(),
-                'data'      =>$a->offset($start)->limit($limit)->orderBy($order, $dir)->get(), 
+                'count_data'=>$tabela_examples->count(),
+                'data'      =>$tabela_examples->offset($start)->limit($limit)->orderBy($order, $dir)->get(), 
                 'count_all' =>static::select(DB::raw("count({num_Id}) as count_all"))->get()->first()->count_all
             ];
 

@@ -1,10 +1,12 @@
 def escrever_query(nomeSingular, valores):
-
-    with open(f'resultado/{nomeSingular}.php', 'a+',  encoding='utf-8') as arquivo:
+    with open(f'resultado/{nomeSingular}.php', 'a+', encoding='utf-8') as arquivo:
         if valores:
-            arquivo.write(f" $query->where(DB::raw('lower({valores[0]})'),"+"LIKE"+","+"%"+".$search."+"%"+")\n")
-            for valor in valores[1:]:
-                arquivo.write(f"                                    ->orWhere(DB::raw('lower({valor})'),"+"LIKE"+","+"%"+".$search."+"%"+");\n")
-
+            for index, valor in enumerate(valores):
+                if index == 0:
+                    arquivo.write(f"        $query->where('{valor}', 'LIKE', \"%\".$search.\"%\")\n")
+                elif index < len(valores) - 1:
+                    arquivo.write(f"                                         ->orWhere('{valor}', 'LIKE', \"%\".$search.\"%\")\n")
+                else:
+                    arquivo.write(f"                                         ->orWhere('{valor}', 'LIKE', \"%\".$search.\"%\");\n")
         else:
             arquivo.write("Array vazia")

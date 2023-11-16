@@ -20,7 +20,7 @@ class UserDependent extends Model
     public function getAll($search, $start, $limit, $order, $dir)
     {
         try {
-            $a = static::select(DB::raw("name, relationship, birth"))
+            ${nome_semAspas} = static::select(DB::raw("name, relationship, birth"))
                             ->when($search !== false, function ($query) use ($search) {
                                 $query->where(function($query) use ($search) {
                                
