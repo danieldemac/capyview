@@ -31,9 +31,11 @@ Este repositório está organizado da seguinte forma:
 - `LICENSE`: [Licença Apache 2.0](https://github.com/danieldemac/capyview/blob/main/LICENSE).
 - `README.md`: Documento que você está lendo agora, contendo informações sobre o projeto.
 - `SECURITY.md`: Arquivo que contem informações sobre políticas de segurança.
+- `funcao_baixoModel.py`: Arquivo que contém a função para a criação da parte inferior do model
 - `funcao_html.py`: Arquivo que contém a função para a criação do HTML.
 - `funcao_js.py`: Arquivo que contém a função para a criação do JavaScript.
-- `funcao_model.py`: Arquivo que contém a função para a criação do model.
+- `funcao_model.py`: Arquivo que contém a função para a criação da parte superior do model.
+- `funcao_query_model.py`: Arquivo que contém a função para a criação das querys no model.
 - `funcao_rota.py`: Arquivo que contém a função para a criação da rota.
 - `funcoes_repositorio.py`: Arquivo que serve como repositório para todas as funções.
 - `main.py`: Arquivo principal do programa.
