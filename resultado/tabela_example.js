@@ -15,7 +15,7 @@ function formClear() {
 	$('#clinic-phone').val('');
 	$('#medical-record').val('');
 	$('#cid').val('');
-	$('#days-away').val('');
+	$('#idade-filho').val('');
 	$('#tabela_example-data').val('');
 	$('#tabela_example-companion').val('');
 }
@@ -148,14 +148,10 @@ $(document).ready(function(){
             url: "/admin/tabela_examples/" + $(this).data('id'),
             method: 'GET',
             success: function (result) {
+				// ESTRUTURA DE REPETIÇÃO
 				$('#id-tabela_example').val(1);
-				$('#clinic-name').val('joao');
-				$('#clinic-phone').val('bbbbbbbbb');
-				$('#medical-record').val('asdasd');
-				$('#cid').val();
-				$('#days-away').val();
-				$('#tabela_example-data').val();
-				$('#tabela_example-companion').val();
+				// ESTRUTURA DE REPETIÇÃO
+
 				$('.modal-title').html('Editar Atestado');
             },
 			error: function(result){
@@ -212,15 +208,9 @@ $(document).ready(function(){
 		var form_data = new FormData();
 		var dateParts = $('#tabela_example-data').val().split('/');
 	
+		// ESTRUTURA DE REPETIÇÃO
 		form_data.append('id_tabela_example', $('#id-tabela_example').val());
-		form_data.append('clinic_name', $('#clinic-name').val());
-		form_data.append('clinic_phone', $('#clinic-phone').val());
-		form_data.append('medical_record', $('#medical-record').val());
-		form_data.append('cid', $('#cid').val());
-		form_data.append('days_away', $('#days-away').val());
-		form_data.append('tabela_example_data', dateParts[2] + '-' + dateParts[1] + '-' + dateParts[0]);
-		form_data.append('tabela_example_companion', $('#tabela_example-companion').val());
-		form_data.append('file', file);
+		// 
 
         $.ajax({
             url: "/admin/tabela_examples",
