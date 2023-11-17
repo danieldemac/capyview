@@ -3,16 +3,7 @@
 
 Este diretório contém os resultados gerados pelo Capyview, uma ferramenta para automatização na geração de HTML, interfaces e rotas em projetos PHP/Laravel.
 
-## Estrutura
-
-Os resultados são organizados da seguinte forma:
-
-- **[Exemplo1](exemplo1/)**: Descrição do resultado ou nomeie conforme necessário.
-  - Arquivos/resultados específicos do Exemplo 1.
-- **[Exemplo2](exemplo2/)**: Descrição do resultado ou nomeie conforme necessário.
-  - Arquivos/resultados específicos do Exemplo 2.
-
-Você pode encontrar os arquivos gerados pelo Capyview correspondentes a diferentes execuções ou casos de uso dentro dos diretórios listados acima.
+Você pode encontrar os arquivos gerados pelo Capyview correspondentes a diferentes execuções ou casos de uso dentro dessa pasta.
 
 ## Como Utilizar
 
