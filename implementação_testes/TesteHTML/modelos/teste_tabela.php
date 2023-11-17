@@ -1,0 +1,9 @@
+	<tr>
+		<th>Name</th>
+		<th>Relationship</th>
+		<th>Status</th>
+		<th>Idade_filho</th>
+		<th>Novo_campo</th>
+		<th>Outro_campo</th>
+		<th>Ações</th>
+	</tr>
