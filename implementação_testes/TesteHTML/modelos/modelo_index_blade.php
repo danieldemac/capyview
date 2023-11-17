@@ -22,11 +22,12 @@
                     <table id="dt-{plural}" class="table table-bordered table-hover">
                         <thead>
                             <tr>
+                                
                                 <th></th>
                                 <th>Clinica</th>
                                 <th>Médico</th>
                                 <th>Cid</th>
-                                <th>Ações</th>
+                                <th>Ações</th> -->
                             </tr>
                         </thead>
                     </table>
@@ -40,7 +41,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <section id="loading-create-{singular}"><div id="loading-content-create-{singular}"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Adicionar Atestados</h4><hr></div>
+            <div class="modal-header"><h4 class="modal-title">Adicionar {pural}</h4><hr></div>
             <div class="modal-body">
                 <div class="alert alert-danger"  role="alert" style="display: none;"></div>
                 <div class="alert alert-success" role="alert" style="display: none;"></div>
@@ -73,8 +74,8 @@
     <div class="modal-dialog">
         <section id="loading-delete-id"><div id="loading-content-delete-id"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Excluir Atestado</h4><hr></div>
-            <div class="modal-body"><p>Deseja <b>EXCLUIR</b> o atestado ?</p></div>
+            <div class="modal-header"><h4 class="modal-title">Excluir {singular}</h4><hr></div>
+            <div class="modal-body"><p>Deseja <b>EXCLUIR</b> o {singular} ?</p></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success" id="submit-delete-{singular}">Sim</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
@@ -87,8 +88,8 @@
     <div class="modal-dialog">
         <section id="loading-delete-ids"><div id="loading-content-delete-ids"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Excluir Atestado</h4><hr></div>
-            <div class="modal-body"><p>Tem certeza que deseja <b>EXCLUIR</b> a(s) Atestado(s) ?</p></div>
+            <div class="modal-header"><h4 class="modal-title">Excluir {singular}</h4><hr></div>
+            <div class="modal-body"><p>Tem certeza que deseja <b>EXCLUIR</b> a(s) {singular}(s) ?</p></div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger" id="submit-delete-{plural}">Sim</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>

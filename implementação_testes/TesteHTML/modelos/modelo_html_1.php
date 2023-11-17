@@ -2,7 +2,7 @@
 @section('page_title', 'Página criada - {singular}')
 
 @section('page_header')
-    <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome</h1>
+    <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome {singular}</h1>
     <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-{singular}" id="bt-create-{singular}">
         <i class="voyager-plus"></i> Adicionar
     </button>

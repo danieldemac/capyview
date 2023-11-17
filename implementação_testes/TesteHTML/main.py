@@ -1,7 +1,7 @@
 from funcao_html import gerar_php_Html
 from funcaoteste2 import criar_tabela_html
 arquivo_saida_tabela = 'modelos/modelo_html_final.php'
-arrayTeste = ['name', 'relationship', 'status', 'idade_filho']
+arrayTeste = ['name', 'relationship', 'status', 'idade_filho','Bora','Bill','LOL','Final']
 singular = 'teste'
 plural = 'testes'
 

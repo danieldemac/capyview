@@ -2,7 +2,7 @@
 @section('page_title', 'Página criada - teste')
 
 @section('page_header')
-    <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome</h1>
+    <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome teste</h1>
     <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-teste" id="bt-create-teste">
         <i class="voyager-plus"></i> Adicionar
     </button>
@@ -20,13 +20,17 @@
                 <div class="card-body">
                     <div class="card-title"></div>
                     <table id="dt-testes" class="table table-bordered table-hover">
-                        <thead>	<tr>
-		<th>Name</th>
-		<th>Relationship</th>
-		<th>Status</th>
-		<th>Idade_filho</th>
-	</tr>
-</tr>
+                        <thead>
+						<tr>
+							<th>Name</th>
+							<th>Relationship</th>
+							<th>Status</th>
+							<th>Idade_filho</th>
+							<th>Bora</th>
+							<th>Bill</th>
+							<th>Lol</th>
+							<th>Final</th>
+						</tr>
                         </thead>
                     </table>
                 </div>
@@ -39,7 +43,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <section id="loading-create-teste"><div id="loading-content-create-teste"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Adicionar {pural}</h4><hr></div>
+            <div class="modal-header"><h4 class="modal-title">Adicionar testes</h4><hr></div>
             <div class="modal-body">
                 <div class="alert alert-danger"  role="alert" style="display: none;"></div>
                 <div class="alert alert-success" role="alert" style="display: none;"></div>
@@ -67,6 +71,30 @@
 				<div class="form-group mb-3">
 					<label class="form-label" for="idade_filho">Idade filho</label>
 					<input type="text" class="form-control " id="idade_filho">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group mb-3">
+					<label class="form-label" for="Bora">Bora*</label>
+					<input type="text" class="form-control required" id="Bora">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group mb-3">
+					<label class="form-label" for="Bill">Bill*</label>
+					<input type="text" class="form-control required" id="Bill">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group mb-3">
+					<label class="form-label" for="LOL">Lol*</label>
+					<input type="text" class="form-control required" id="LOL">
+				</div>
+			</div>
+			<div class="form-row">
+				<div class="form-group mb-3">
+					<label class="form-label" for="Final">Final*</label>
+					<input type="text" class="form-control required" id="Final">
 				</div>
 			</div>
 </form></form>

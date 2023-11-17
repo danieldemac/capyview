@@ -11,10 +11,10 @@ def criar_tabela_html(array, arquivo_saida):
     with open(arquivo_saida, 'w', encoding='utf-8') as arquivo:
         arquivo.write(modelo_1_content)  # Escreve o conteúdo do modelo 1 original
 
-        arquivo.write('\t<tr>\n')
+        arquivo.write('\t\t\t\t\t\t<tr>\n')
         for item in array:
-            arquivo.write(f'\t\t<th>{item.capitalize()}</th>\n')
-        arquivo.write('\t</tr>\n')
+            arquivo.write(f'\t\t\t\t\t\t\t<th>{item.capitalize()}</th>\n')
+        arquivo.write('\t\t\t\t\t\t</tr>\n')
 
         arquivo.write(modelo_2_content)  # Adiciona o conteúdo do modelo 2
 
