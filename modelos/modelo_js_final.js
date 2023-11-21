@@ -10,16 +10,12 @@ function hideLoading(a, b) {
 
 function formClear() {
 	$('#file').val('');
-	$('#id-TESTE').val('');	$('#name').val('');
+	$('#id-{singular}').val('');	$('#name').val('');
 	$('#relationship').val('');
 	$('#status').val('');
 	$('#idade_filho').val('');
-	$('#Bora').val('');
-	$('#Bill').val('');
-	$('#LOL').val('');
-	$('#Final').val('');
-    $('#TESTE-data').val('');
-    $('#TESTE-companion').val('');
+    $('#{singular}-data').val('');
+    $('#{singular}-companion').val('');
 }
 
 $(window).on('load', function(){
@@ -28,7 +24,7 @@ var inputSearch;
 var timeout = null;
 var blockKeyCodes = [16, 17, 18, 20, 27, 32, 33, 34, 37, 38, 39, 40, 91, 92, 93, 144];
 
-var table = $('#dt-{TESTES}').DataTable({
+var table = $('#dt-{{plural}}').DataTable({
     processing: true,
     serverSide: true,
     autoWidth: false,
@@ -37,16 +33,12 @@ var table = $('#dt-{TESTES}').DataTable({
     order: [[ 1, "desc" ]],
     lengthMenu: [5, 10, 25, 50],
     columnDefs: [{ "targets": 0, "orderable": false },{ "targets": 4, "orderable": false }],
-    ajax: { url:"get-{TESTES}" },
+    ajax: { url:"get-{{plural}}" },
     columns: [ 
         { data: 'checkbox', sClass: 'text-center', serachable: false },		{ data: 'name' },
 		{ data: 'relationship' },
 		{ data: 'status' },
 		{ data: 'idade_filho' },
-		{ data: 'Bora' },
-		{ data: 'Bill' },
-		{ data: 'LOL' },
-		{ data: 'Final' },
         { data: 'action', serachable: false  }
 ],
 language: {url:"/js/data-tables/pt_br.json"},
@@ -98,26 +90,26 @@ dt.ajax.reload();
 
 $(document).ready(function(){
 
-var TESTES_selects = [];
-var TESTE_id;
+var {plural}_selects = [];
+var {singular}_id;
 
-$('body').on('click', '.TESTE_checkbox', function (e) {
+$('body').on('click', '.{singular}_checkbox', function (e) {
 var arrayChecked = []
 var checkboxesMarcados = $("input[type='checkbox']:checked");
 checkboxesMarcados.each(function () { arrayChecked.push($(this).val());});
 
-TESTES_selects = arrayChecked;
-TESTES_selects.length > 0 ? $('#bt-delete-TESTES').removeAttr('disabled') : $('#bt-delete-TESTES').attr('disabled', 'disabled');
+{plural}_selects = arrayChecked;
+{plural}_selects.length > 0 ? $('#bt-delete-{plural}').removeAttr('disabled') : $('#bt-delete-{plural}').attr('disabled', 'disabled');
 })
 
 $('body').on('click', '#bt-view-file', function (e) {
 e.preventDefault();
 $.ajax({
-    url: "/admin/TESTES-view-file/" + $(this).data('id'),
+    url: "/admin/{plural}-view-file/" + $(this).data('id'),
     method: 'GET',
     data: { id: $(this).data('id') },
     success: function (result) {
-        $('#TESTE-view-file').html(result.html);
+        $('#{singular}-view-file').html(result.html);
     },
     error: function(result){
         console.log('ERRO');
@@ -125,17 +117,17 @@ $.ajax({
 });
 });
 
-$('body').on('click', '#bt-delete-TESTE', function () { TESTE_id = $(this).data('id') })
-$('#submit-delete-TESTE').click(function (e) {
+$('body').on('click', '#bt-delete-{singular}', function () { {singular}_id = $(this).data('id') })
+$('#submit-delete-{singular}').click(function (e) {
 e.preventDefault();
 $.ajax({
-    url: "/admin/TESTES",
+    url: "/admin/{plural}",
     method: 'DELETE',
-    data:{ids: JSON.stringify(TESTE_id)},
+    data:{ids: JSON.stringify({singular}_id)},
     headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
     success: function (result) {
         console.log(result);
-        $('#dt-TESTES').DataTable().ajax.reload();
+        $('#dt-{plural}').DataTable().ajax.reload();
         $('.alert-success').hide();
         //$('#deletarFeriado').modal('hide');
         window.location = document.URL;
@@ -143,7 +135,7 @@ $.ajax({
     error: function(result){
         $('.alert-danger').show();
            $('.alert-danger').append('<strong>Erro!</strong>&nbsp; ' + result.error + '');
-        hideLoading('#loading-create-TESTE', '#loading-content-create-TESTE');
+        hideLoading('#loading-create-{singular}', '#loading-content-create-{singular}');
     }
 });
 });
@@ -151,19 +143,15 @@ $.ajax({
 $('body').on('click', '#bt-edit', function (e) {
 e.preventDefault();
 $.ajax({
-    url: "/admin/TESTES/" + $(this).data('id'),
+    url: "/admin/{plural}/" + $(this).data('id'),
     method: 'GET',
     success: function (result) {
-        $('#id-TESTE').val(1);		$('#name').val();
+        $('#id-{singular}').val(1);		$('#name').val();
 		$('#relationship').val();
 		$('#status').val();
 		$('#idade_filho').val();
-		$('#Bora').val();
-		$('#Bill').val();
-		$('#LOL').val();
-		$('#Final').val();
-		$('#TESTE-data').val();
-		$('#TESTE-companion').val();
+		$('#{singular}-data').val();
+		$('#{singular}-companion').val();
 		$('.modal-title').html('Editar Atestado');
             },
 			error: function(result){
@@ -172,7 +160,7 @@ $.ajax({
         });
     });
 
-	$('body').on('click', '#bt-create-TESTE', function (e) {
+	$('body').on('click', '#bt-create-{singular}', function (e) {
         e.preventDefault();
 		formClear();
 		$('.modal-title').html('Adicionar Atestado');
@@ -183,49 +171,49 @@ $.ajax({
 
 
 
-    $('#submit-delete-TESTES').click(function (e) {
+    $('#submit-delete-{plural}').click(function (e) {
 		alert($(this).data('id'));
-		alert(TESTES_selects);
+		alert({plural}_selects);
 
         e.preventDefault();
         $.ajax({
-            url: "/admin/TESTES",
-            data:{ids: JSON.stringify(TESTES_selects)},
+            url: "/admin/{plural}",
+            data:{ids: JSON.stringify({plural}_selects)},
             method: 'DELETE',
 			headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
             success: function (result) {
 				console.log(result);
-                $('#dt-TESTES').DataTable().ajax.reload();
+                $('#dt-{plural}').DataTable().ajax.reload();
                 $('.alert-success').hide();
-                $('#model-delete-TESTES').modal('hide');
+                $('#model-delete-{plural}').modal('hide');
                  window.location = document.URL;
             },
 			error: function(result){
 				console.log(result);
                 $('.alert-danger').show();
                	$('.alert-danger').append('<strong>Erro!</strong>&nbsp; ' + result.error + '');
-                hideLoading('#loading-create-TESTE', '#loading-content-create-TESTE');
+                hideLoading('#loading-create-{singular}', '#loading-content-create-{singular}');
 			}
         });
     });
 
-	$('#submit-update-create-TESTE').click(function (e) {
+	$('#submit-update-create-{singular}').click(function (e) {
 		$('.alert-danger').hide();
         $('.alert-success').hide();
 
         e.preventDefault();
-        showLoading('#loading-create-TESTE', '#loading-content-create-TESTE');
+        showLoading('#loading-create-{singular}', '#loading-content-create-{singular}');
 
 		var file 	  = $('#file').prop('files')[0];
 		var form_data = new FormData();
-		var dateParts = $('#TESTE-data').val().split('/');
+		var dateParts = $('#{singular}-data').val().split('/');
 	
 		// ESTRUTURA DE REPETIÇÃO
-		form_data.append('id_TESTE', $('#id-TESTE').val());
+		form_data.append('id_{singular}', $('#id-{singular}').val());
 		// 
 
         $.ajax({
-            url: "/admin/TESTES",
+            url: "/admin/{plural}",
             method: 'POST',
 			data: form_data,
 			contentType : false,
@@ -237,26 +225,26 @@ $.ajax({
                 $('.alert-danger').hide();
                 $('.alert-success').show();
 				$('.alert-success').append('<strong>Sucesso! </strong>&nbsp; ' + result.success + '');
-                $('#dt-TESTES').DataTable().ajax.reload();
+                $('#dt-{plural}').DataTable().ajax.reload();
                 window.location = document.URL;
             },
 			error: function(result){
                 $('.alert-danger').show();
                	$('.alert-danger').append('<strong>Erro!</strong>&nbsp; ' + result.error + '');
-                hideLoading('#loading-create-TESTE', '#loading-content-create-TESTE');
+                hideLoading('#loading-create-{singular}', '#loading-content-create-{singular}');
 			}
         });
     });
 
 
-	$('#submit-edit-TESTE').click(function (e) {
+	$('#submit-edit-{singular}').click(function (e) {
         e.preventDefault();
         $.ajax({
-            url: "/admin/TESTES/" + $(this).data('id'),
+            url: "/admin/{plural}/" + $(this).data('id'),
             method: 'GET',
             data: { id: $(this).data('id') },
             success: function (result) {
-                $('#TESTE-view-file').html(result.html);
+                $('#{singular}-view-file').html(result.html);
             },
 			error: function(result){
 				console.log('ERRO');
