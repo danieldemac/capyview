@@ -10,7 +10,8 @@ function hideLoading(a, b) {
 
 function formClear() {
 	$('#file').val('');
-	$('#id-{singular}').val('');	$('#name').val('');
+	$('#id-{singular}').val('');
+	$('#name').val('');
 	$('#relationship').val('');
 	$('#status').val('');
 	$('#idade_filho').val('');
@@ -35,7 +36,8 @@ var table = $('#dt-{{plural}}').DataTable({
     columnDefs: [{ "targets": 0, "orderable": false },{ "targets": 4, "orderable": false }],
     ajax: { url:"get-{{plural}}" },
     columns: [ 
-        { data: 'checkbox', sClass: 'text-center', serachable: false },		{ data: 'name' },
+        { data: 'checkbox', sClass: 'text-center', serachable: false },
+		{ data: 'name' },
 		{ data: 'relationship' },
 		{ data: 'status' },
 		{ data: 'idade_filho' },

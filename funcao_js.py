@@ -1,5 +1,5 @@
 def gerar_js(singular, nome):
-    modelo_file = f"modelos/modelo_js.js"
+    modelo_file = f"modelos/modelo_js_final.js"
     output_file = f"resultado/{singular}.js"
 
     # Lê o modelo
