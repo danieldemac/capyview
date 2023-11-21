@@ -63,6 +63,9 @@ CREATE TABLE tabela_testes
 ```
 Ao rodar o programa ele vai criar uma base para views, rotas e controllers usando essa tabela como base. Mais funcionalidades e modelos estão sendo elaborados para esse projeto.
 
+## Site do Projeto disponivel pelo Netlify!
+
+Link disponivel neste endereço: https://capyview.netlify.app/
 
 ## Licença
 
