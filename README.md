@@ -22,8 +22,11 @@ Este repositório está organizado da seguinte forma:
 
 - `.github/ISSUE_TEMPLATE`: Diretório que contém modelos de issues.
 - `__pycache__`: Diretório utilizado pelo Python para armazenar arquivos de cache contendo versões compiladas (bytecode) de módulos Python, visando melhorar o desempenho de importação.
+- `css`: Pasta com Styles CSS do site.
+- `html`: Pasta com outros HTML do site.
 - `images`: Pasta que contém a logo do Capyview.
 - `implementação_testes`: Pasta que inclui testes de novas funcionalidades.
+- `js`: Pasta para arquivos JS.
 - `modelos`: Pasta que contém modelos usados como base para a criação de views e rotas.
 - `resultado`: Pasta que contém os resultados das automações.
 - `CODE_OF_CONDUCT.md`: Arquivo que foi para refletir as diretrizes de conduta para contribuição no projeto.
@@ -38,6 +41,7 @@ Este repositório está organizado da seguinte forma:
 - `funcao_query_model.py`: Arquivo que contém a função para a criação das querys no model.
 - `funcao_rota.py`: Arquivo que contém a função para a criação da rota.
 - `funcoes_repositorio.py`: Arquivo que serve como repositório para todas as funções.
+- `index.html`: Html com site base para interação com usuário.
 - `main.py`: Arquivo principal do programa.
 
 ## Como Usar
