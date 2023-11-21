@@ -1,12 +1,12 @@
 @extends('voyager::master')
-@section('page_title', 'Página criada - tabela_example')
+@section('page_title', 'Página criada - {singular}')
 
 @section('page_header')
-    <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome tabela_example</h1>
-    <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-tabela_example" id="bt-create-tabela_example">
+    <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome {singular}</h1>
+    <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-{singular}" id="bt-create-{singular}">
         <i class="voyager-plus"></i> Adicionar
     </button>
-    <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#model-delete-tabela_examples" id="bt-delete-tabela_examples" disabled="true">
+    <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#model-delete-{plural}" id="bt-delete-{plural}" disabled="true">
         <i class="voyager-trash"></i> Exclusão em massa
     </button>
 @stop
@@ -19,7 +19,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title"></div>
-                    <table id="dt-tabela_examples" class="table table-bordered table-hover">
+                    <table id="dt-{plural}" class="table table-bordered table-hover">
                         <thead>
 						<tr>
 							<th>Name</th>
@@ -35,16 +35,16 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-create-tabela_example" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal-create-{singular}" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <section id="loading-create-tabela_example"><div id="loading-content-create-tabela_example"></div></section>
+        <section id="loading-create-{singular}"><div id="loading-content-create-{singular}"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Adicionar tabela_examples</h4><hr></div>
+            <div class="modal-header"><h4 class="modal-title">Adicionar {plural}</h4><hr></div>
             <div class="modal-body">
                 <div class="alert alert-danger"  role="alert" style="display: none;"></div>
                 <div class="alert alert-success" role="alert" style="display: none;"></div>
  
-                <form id="form-create-tabela_example" enctype="multipart/form-data"><form id="form-create-tabela_example" enctype="multipart/form-data">
+                <form id="form-create-{singular}" enctype="multipart/form-data"><form id="form-create-{singular}" enctype="multipart/form-data">
 			<div class="form-row">
 				<div class="form-group mb-3">
 					<label class="form-label" for="name">Name*</label>
@@ -75,34 +75,34 @@
             <div class="modal-footer">
                 <hr>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-success" id="submit-update-create-tabela_example">Salvar</button>
+                <button type="button" class="btn btn-success" id="submit-update-create-{singular}">Salvar</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal" id="model-delete-tabela_example">
+<div class="modal" id="model-delete-{singular}">
     <div class="modal-dialog">
         <section id="loading-delete-id"><div id="loading-content-delete-id"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Excluir tabela_example</h4><hr></div>
-            <div class="modal-body"><p>Deseja <b>EXCLUIR</b> o tabela_example ?</p></div>
+            <div class="modal-header"><h4 class="modal-title">Excluir {singular}</h4><hr></div>
+            <div class="modal-body"><p>Deseja <b>EXCLUIR</b> o {singular} ?</p></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="submit-delete-tabela_example">Sim</button>
+                <button type="button" class="btn btn-success" id="submit-delete-{singular}">Sim</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal" id="model-delete-tabela_examples">
+<div class="modal" id="model-delete-{plural}">
     <div class="modal-dialog">
         <section id="loading-delete-ids"><div id="loading-content-delete-ids"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Excluir tabela_example</h4><hr></div>
-            <div class="modal-body"><p>Tem certeza que deseja <b>EXCLUIR</b> a(s) tabela_example(s) ?</p></div>
+            <div class="modal-header"><h4 class="modal-title">Excluir {singular}</h4><hr></div>
+            <div class="modal-body"><p>Tem certeza que deseja <b>EXCLUIR</b> a(s) {singular}(s) ?</p></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="submit-delete-tabela_examples">Sim</button>
+                <button type="button" class="btn btn-danger" id="submit-delete-{plural}">Sim</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
             </div>
         </div>
@@ -113,7 +113,7 @@
     <div class="modal-dialog">
         <div class="modal-content" >
             <div class="modal-header"><h4 class="modal-title">Visualizar Arquivo</h4><hr></div>
-            <div class="modal-body"><div id="tabela_example-view-file"></div></div>
+            <div class="modal-body"><div id="{singular}-view-file"></div></div>
             <div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button></div>
         </div>
     </div>
@@ -149,12 +149,12 @@
     <script type="text/javascript" src="{{ asset('js/data-tables/pdfmake.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/data-tables/vfs_fonts.js') }}"></script>
     
-    <script src="{{ asset('js/tabela_examples.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/{plural}.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-datepicker.pt.min.js') }}" type="text/javascript"></script>
 
     <script>
-        $("#tabela_example-data").datepicker({
+        $("#{singular}-data").datepicker({
             daysOfWeekDisabled: [0, 7],
             todayHighlight: false,
             language: 'pt-BR',

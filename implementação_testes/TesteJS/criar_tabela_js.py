@@ -1,21 +1,3 @@
-def gerar_js(singular, nome):
-    modelo_file = f"modelos/modelo_js.js"
-    output_file = f"resultado/{singular}.js"
-
-    # Lê o modelo
-    with open(modelo_file, 'r', encoding='utf-8') as modelo:
-        template = modelo.read()
-
-   
-    template = template.replace("{singular}", singular)
-    template = template.replace("{plural}", nome)
-
-    # Escreve o conteúdo no novo arquivo
-    with open(output_file, 'w', encoding='utf-8') as file:
-        file.write(template)
-
-    return output_file
-
 def criar_tabela_js(array, arquivo_saida):
     
     with open('modelos/modelo_js_1.js', 'r', encoding='utf-8') as modelo_1:
@@ -48,5 +30,7 @@ def criar_tabela_js(array, arquivo_saida):
             arquivo.write(f'''\t\t$('#{item}').val();\n''') 
         
         arquivo.write(modelo_4_content)  # Adiciona o conteúdo do modelo 3
-    
-    return arquivo_saida
+
+arquivo_saida_tabela = 'modelos/modelo_js_final.js'
+arrayTeste = ['name', 'relationship', 'status', 'idade_filho','Bora','Bill','LOL','Final']
+teste = criar_tabela_js(arrayTeste, arquivo_saida_tabela)

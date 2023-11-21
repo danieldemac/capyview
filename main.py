@@ -1,7 +1,7 @@
-from funcao_html import gerar_php_Html
+from funcao_html import gerar_php_Html , criar_tabela_html
 from funcao_model import gerar_php_model
 from funcao_rota import gerar_rota
-from funcao_js import gerar_js
+from funcao_js import gerar_js , criar_tabela_js
 from funcao_query_model import escrever_query
 from funcao_baixoModel import gerar_php_baixoModel
 
@@ -98,9 +98,12 @@ print(" ")
 print("Outras Variáveis: " + other_variables_str)
 print(" ")
 
+#Variáveis funções
 arrayTipos = variables_by_type["Text"] + variables_by_type["Numeric"]
 arquivo_origem = 'modelos/modelo_query_model.php'
 arquivo_destino = f'resultado/{nomeTabelaSingular}.php'
+arquivo_saida_tabela = 'modelos/modelo_html_final.php'
+arquivo_saida_tabela_js = 'modelos/modelo_js_final.js'
 
 # Criação dos arquivos
 
@@ -109,8 +112,10 @@ file_name_model = gerar_php_model(nomeTabelaSingular, nome_Tabela_str, id_semAsp
 file_query_model = escrever_query(nomeTabelaSingular, arrayTipos)
 file_baixoModel = gerar_php_baixoModel(nomeTabelaSingular, nomeTabela)
 #HTML
+file_name_html_tabela = criar_tabela_html(arrayTipos, arquivo_saida_tabela)
 file_name_html = gerar_php_Html(nomeTabelaSingular, nomeTabela)
 #JS
+file_name_js_tabela = criar_tabela_js(arrayTipos, arquivo_saida_tabela_js)
 file_name_js = gerar_js(nomeTabelaSingular, nomeTabela)
 #ROTA
 file_name_rota = gerar_rota(nomeTabelaSingular, nomeTabela)
@@ -123,10 +128,14 @@ print(f"Arquivo '{file_baixoModel}' foi finalizado com sucesso.")
 print(" ")
 print("---Criando HTML---")
 print(" ")
+print(f"Arquivo '{file_name_html_tabela }' gerado com sucesso.")
+print(f"Usando '{file_name_html_tabela }' para criar arquivo final.")
 print(f"Arquivo '{file_name_html}' foi criado com sucesso.")
 print(" ")
 print("---Criando JS---")
 print(" ")
+print(f"Arquivo '{file_name_js_tabela}' gerado com sucessor.")
+print(f"Usando '{file_name_js_tabela }' para criar arquivo final.")
 print(f"Arquivo '{file_name_js}' foi criado com sucesso.")
 print(" ")
 print("---Criando ROTA---")
