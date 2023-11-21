@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CapyView</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Barra de navegação -->
+    <div class="navbar">
+        <a href="html/telas.html">CRIAR TELAS</a>
+        <a href="index.html">SOBRE</a>
+        <a href="html/contato.html">CONTATO</a>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="container">
+        <img class="logo" src="images/capyview.png" alt="Logo CapyView">
+        <h1>CapyView</h1>
+        <p>Automatização Simplificada: Capyview - Uma Ferramenta para Geração de HTML, Interfaces e Rotas em Projetos PHP/Laravel.</p>
+
+        <!-- Informações sobre CapyView -->
+        <h2>Visão Geral</h2>
+        <p>No mundo do desenvolvimento de projetos PHP/Laravel, a criação de múltiplas páginas, interfaces de usuário e configurações de rotas pode ser uma tarefa demorada e propensa a erros. É nesse cenário desafiador que o “Capyview” surge como uma solução para melhorar a celeridade dos projetos Web. Esta ferramenta é projetada para simplificar e automatizar o processo de desenvolvimento, economizando tempo e esforço na geração de código HTML, criação de interfaces de usuário e configurações de rotas.</p>
+
+        <h3>Com o Capyview, você pode:</h3>
+        <ul>
+            <li>Gerar páginas HTML facilmente a partir de modelos predefinidos.</li>
+            <li>Criar interfaces de usuário de maneira eficiente.</li>
+            <li>Definir rotas no Laravel de forma automática.</li>
+        </ul>
+
+        <h2>Estrutura do Projeto</h2>
+        <p>Como Usar</p>
+        <p>No momento o programa funciona apenas no terminal pelo Arquivo main.py. Você deve escreve o comando para criação de tabelas dentro de um arquivo chamado modelos/tabela.php. Exemplo de comando:</p>
+
+        <pre>
+
+    CREATE TABLE tabela_testes
+    (
+        id bigint,
+        name character varying(200),
+        relationship character varying(50),
+        birth date,
+        created_at timestamp,
+        status "char",
+        updated_at timestamp,
+        deleted_at timestamp
+    )
+
+        </pre>
+
+        <p>Ao rodar o programa ele vai criar uma base para views, rotas e controllers usando essa tabela como base. Mais funcionalidades e modelos estão sendo elaborados para esse projeto.</p>
+
+        <h2>Licença</h2>
+        <p>Este projeto é distribuído sob a Licença Apache 2.0. Leia o arquivo de licença para obter mais informações.</p>
+
+        <p>Capyview é desenvolvido por Daniel Cabral.</p>
+
+        <h2>Instalação</h2>
+        <p>Crie um clone repository na sua máquina local:</p>
+        <pre> 
+            git clone https://github.com/danieldemac/capyview.git
+        </pre>
+    </div>
+
+    <!-- Rodapé -->
+
+</body>
+<footer>
+    <p>© 2023 CapyView. Todos os direitos reservados.</p>
+</footer>
+</html>

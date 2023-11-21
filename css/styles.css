@@ -1,0 +1,79 @@
+        /* Estilos CSS - Substitua pelo seu CSS profissional */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff; /* Fundo branco */
+            color: #333; /* Cor do texto */
+            font-family: 'Roboto', sans-serif;
+        }
+        pre {
+            color: #ffffff;
+            background-color: black;
+        }
+
+        /* Barra de navegação */
+        .navbar {
+            background-color: #ADD8E6; /* Azul claro */
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #333; /* Cor dos links */
+        }
+
+        /* Seções */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: aliceblue;
+        }
+
+        .logo {
+            max-width: 200px; /* Tamanho da logo */
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #ADD8E6; /* Azul claro */
+            text-align: center;
+            padding: 10px 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .aviso{
+            text-align: center;
+        }
+
+        .developer {
+            text-align: center;
+            margin-top: 50px;
+          }
+          
+          .developer img {
+            border-radius: 50%; /* Imagem redonda */
+          }
+          
+          .developer-info {
+            margin-top: 20px;
+          }
+
+          
+        .social-links a {
+            display: inline-block;
+            margin: 10px;
+            text-decoration: none;
+            color: #333; /* Cor do texto do link */
+            transition: transform 0.3s ease; /* Efeito de transição suave */
+        }
+        
+        .social-links a:hover {
+            transform: scale(1.2); /* Aumenta ligeiramente o tamanho ao passar o mouse */
+        }
