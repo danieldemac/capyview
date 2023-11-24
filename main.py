@@ -4,9 +4,9 @@ from funcao_rota import gerar_rota
 from funcao_js import gerar_js , criar_tabela_js
 from funcao_query_model import escrever_query
 from funcao_baixoModel import gerar_php_baixoModel
+import sys
 
-
-tabela = 'modelos/tabela.php'
+tabela = "modelos/tabela.php"
 
 with open(tabela, 'r', encoding='UTF-8') as modelo:
     template = modelo.read()
@@ -31,8 +31,10 @@ for linha in linhas:
         partes = linha.strip().strip(",").split()
         if len(partes) >= 2:
             nome_coluna = partes[0]
-            tipo_coluna = " ".join(partes[1:])
+            # Juntar o tipo da coluna mantendo o espaço antes do parêntese
+            tipo_coluna = " ".join(partes[1:]).replace('(', ' (')
             valores.append([nome_coluna, tipo_coluna])
+
 
 print("---------------------Criação das Views---------------------")
 print(" ")
@@ -46,6 +48,7 @@ print(" ")
 # Os tipos de variáveis
 idVariables = ['bigint', 'bigserial', 'serial']
 numVariables = ['bit', 'tinyint', 'smallint', 'int', 'numeric', 'decimal', 'real', 'float', 'smallmoney', 'money','integer']
+booleanVariables = ['boolean']
 dateVariables = ['datetime', 'datetime2', 'smalldatetime', 'date', 'time', 'datetimeoffset', 'timestamp']
 textVariables = ['char','"char"', 'varchar', 'text', 'nchar', 'nvarchar', 'ntext', 'binary', 'varbinary', 'image',
                 'character']
@@ -55,6 +58,7 @@ otherVariables = ['sql_variant', 'uniqueidentifier', 'xml', 'cursor', 'table','r
 variables_by_type = {
     "primaryKey": [],
     "Numeric": [],
+    "Boolean":[],
     "Date": [],
     "Text": [],
     "Other": []
@@ -71,6 +75,8 @@ for nome, tipo in valores:
         variables_by_type["Date"].append(nome)
     elif tipo in idVariables:
         variables_by_type["primaryKey"].append(nome)
+    elif tipo in booleanVariables:
+        variables_by_type["Boolean"].append(nome)
     elif tipo in textVariables:
         variables_by_type["Text"].append(nome)
     else:
@@ -84,6 +90,7 @@ id_variables_str = ", ".join(["'" + var + "'" for var in variables_by_type["prim
 numeric_variables_str = ", ".join(["'" + var + "'" for var in variables_by_type["Numeric"]])
 date_variables_str = ", ".join(["'" + var + "'" for var in variables_by_type["Date"]])
 text_variables_str = ", ".join(["'" + var + "'" for var in variables_by_type["Text"]])
+boolean_variables_str = ", ".join(["'" + var + "'" for var in variables_by_type["Boolean"]])
 other_variables_str = ", ".join(["'" + var + "'" for var in variables_by_type["Other"]])
 
 # Imprimir as variáveis separadas por tipo
@@ -95,11 +102,13 @@ print("Variáveis de Data: " + date_variables_str)
 print(" ")
 print("Variáveis de Texto: " + text_variables_str)
 print(" ")
+print("Variáveis Boolean: " + boolean_variables_str)
+print(" ")
 print("Outras Variáveis: " + other_variables_str)
 print(" ")
 
 #Variáveis funções
-arrayTipos = variables_by_type["Text"] + variables_by_type["Numeric"]
+arrayTipos = variables_by_type["Text"] + variables_by_type["Numeric"] + variables_by_type["Boolean"]
 arquivo_origem = 'modelos/modelo_query_model.php'
 arquivo_destino = f'resultado/{nomeTabelaSingular}.php'
 arquivo_saida_tabela = 'modelos/modelo_html_final.php'
@@ -108,7 +117,7 @@ arquivo_saida_tabela_js = 'modelos/modelo_js_final.js'
 # Criação dos arquivos
 
 #Model
-file_name_model = gerar_php_model(nomeTabelaSingular, nome_Tabela_str, id_semAspas, id_variables_str, numeric_variables_str, text_variables_str, date_variables_str, nomeTabela)
+file_name_model = gerar_php_model(nomeTabelaSingular, nome_Tabela_str, id_semAspas, id_variables_str, numeric_variables_str, text_variables_str, date_variables_str,boolean_variables_str, nomeTabela)
 file_query_model = escrever_query(nomeTabelaSingular, arrayTipos)
 file_baixoModel = gerar_php_baixoModel(nomeTabelaSingular, nomeTabela)
 #HTML
