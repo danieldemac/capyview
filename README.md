@@ -21,6 +21,7 @@ Com o **Capyview**, você pode:
 Este repositório está organizado da seguinte forma:
 
 - `.github/ISSUE_TEMPLATE`: Diretório que contém modelos de issues.
+- `PGT-CapyView` - Pasta com testes de algumas novas funcionalidades.
 - `__pycache__`: Diretório utilizado pelo Python para armazenar arquivos de cache contendo versões compiladas (bytecode) de módulos Python, visando melhorar o desempenho de importação.
 - `css`: Pasta com Styles CSS do site.
 - `html`: Pasta com outros HTML do site.
