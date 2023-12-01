@@ -10,17 +10,53 @@ from funcao_query_model import escrever_query
 from funcao_baixoModel import gerar_php_baixoModel
 
 
-tabela = filedialog.askopenfilename()
+def obter_texto_tabela():
+    global tabela
+    tabela = texto_tabela.get("1.0", "end-1c")
+     # Fechar o programa
+    inicio.destroy()  # Fechar a janela principal do Tkinter
+    
 
-with open(tabela, 'r', encoding='UTF-8') as modelo:
-    template = modelo.read()
+def fechar():
+    mostrar.destroy()
+    
+def fechar_janela():
+    janela.destroy()
+# Inicio do Programa
+inicio = Tk()
+inicio.title('CapyView - v.beta')
+inicio.iconbitmap('capyview.ico')
+inicio.geometry("500x400+200+100")
+
+texto0 = Label(inicio, text='----> ')
+texto0.grid(column=0, row=0)
+
+texto1 = Label(inicio, text='Digite abaixo o comando criação ')
+texto1.grid(column=1, row=0)
+
+texto2 = Label(inicio, text=' <----')
+texto2.grid(column=2, row=0)
+
+texto_tabela = Text(inicio, height=15, width=50)
+texto_tabela.grid(column=1, row=1)
+
+botao_atualizar = Button(inicio, text="Atualizar Tabela", command=obter_texto_tabela)
+botao_atualizar.grid(column=1, row=2)
+
+
+inicio.mainloop()
+
+#comando para procurar o arquivo
+# tabela = filedialog.askopenfilename()
+
+
 
 # Encontrar o nome da tabela
-nomeTabela = template.split("CREATE TABLE ")[1].split("\n")[0].strip()
+nomeTabela = tabela.split("CREATE TABLE ")[1].split("\n")[0].strip()
 nomeTabelaSingular = nomeTabela[:-1]
 
 # Linhas da definição da tabela
-linhas = template.splitlines()
+linhas = tabela.splitlines()
 
 # Inicializar a array bidimensional
 valores = []
@@ -118,6 +154,85 @@ arquivo_destino = f'resultado/{nomeTabelaSingular}.php'
 arquivo_saida_tabela = 'modelos/modelo_html_final.php'
 arquivo_saida_tabela_js = 'modelos/modelo_js_final.js'
 
+
+resultados_text = f''' 
+---------------------Criação das Views---------------------
+Nome da tabela - {nomeTabela}
+Nome da tabela singular - {nomeTabelaSingular}
+Nome da tabela singular: {nomeTabelaSingular} 
+Valores das colunas: {valores} 
+Variável de ID: {id_variables_str} 
+Variáveis Numéricas: {numeric_variables_str} 
+Variáveis de Data: {date_variables_str} 
+Variáveis de Texto: {text_variables_str} 
+Variáveis Boolean: {boolean_variables_str}
+Outras Variáveis: {other_variables_str}
+'''
+
+
+# Criar uma janela Tkinter
+mostrar = Tk()
+mostrar.title('CapyView - v.beta')
+mostrar.iconbitmap('capyview.ico')
+
+texto0 = Label(mostrar, text='----> ')
+texto0.grid(column=0, row=0)
+
+texto1 = Label(mostrar, text='Dados da tabela para geração dos Documentos ')
+texto1.grid(column=1, row=0)
+
+texto2 = Label(mostrar, text=' <----')
+texto2.grid(column=2, row=0)
+
+# Criar um widget Text para exibir o conteúdo
+texto_resultados = Text(mostrar, height=20, width=100, padx=10, pady=10)
+texto_resultados.grid(column=1, row=3, pady=10)
+
+# Função para adicionar texto em negrito
+def adicionar_negrito(texto):
+    texto_resultados.tag_configure("negrito", font=("TkDefaultFont", 10, "bold"))
+    texto_resultados.insert("end", texto, "negrito")
+
+# Exibir o conteúdo da variável resultados_text no widget Text
+adicionar_negrito("Nome da tabela - ")
+texto_resultados.insert("end", f"{nomeTabela}\n")
+
+adicionar_negrito("Nome da tabela singular - ")
+texto_resultados.insert("end", f"{nomeTabelaSingular}\n")
+
+adicionar_negrito("Nome da tabela singular: ")
+texto_resultados.insert("end", f"{nomeTabelaSingular}\n")
+
+adicionar_negrito("Valores das colunas: ")
+texto_resultados.insert("end", f"{valores}\n")
+
+adicionar_negrito("Variável de ID: ")
+texto_resultados.insert("end", f"{id_variables_str}\n")
+
+adicionar_negrito("Variáveis Numéricas: ")
+texto_resultados.insert("end", f"{numeric_variables_str}\n")
+
+adicionar_negrito("Variáveis de Data: ")
+texto_resultados.insert("end", f"{date_variables_str}\n")
+
+adicionar_negrito("Variáveis de Texto: ")
+texto_resultados.insert("end", f"{text_variables_str}\n")
+
+adicionar_negrito("Variáveis Boolean: ")
+texto_resultados.insert("end", f"{boolean_variables_str}\n")
+
+adicionar_negrito("Outras Variáveis: ")
+texto_resultados.insert("end", f"{other_variables_str}\n")
+
+# Desabilitar a edição no widget Text
+texto_resultados.config(state="disabled")
+
+botao_atualizar = Button(mostrar, text="Continuar", command=fechar)
+botao_atualizar.grid(column=1, row=2)
+
+mostrar.mainloop()
+
+
 #Função para gerar tudo
 def criar_tudo():
     # Model
@@ -174,13 +289,14 @@ janela.title('CapyView - v.beta')
 
 # Carrega o ícone e define para a janela
 janela.iconbitmap('capyview.ico')
+janela.geometry("500x600+200+100")
 
 # Texto
-texto1 = Label(janela, text='>')
+texto1 = Label(janela, text='----> ')
 texto1.grid(column=0, row=0)
 texto3 = Label(janela, text='Clique no botão para gerar os Arquivos.')
 texto3.grid(column=1, row=0, padx=10, pady=10)
-texto2 = Label(janela, text='<')
+texto2 = Label(janela, text=' <----')
 texto2.grid(column=2, row=0)
 
 # Botão
@@ -190,6 +306,9 @@ botao.grid(column=1, row=2)
 # Informativo dos Resultados
 resultados = Label(janela, text='')
 resultados.grid(column=1, row=4)
+
+botao = Button(janela, text='Fechar', command=fechar_janela)
+botao.grid(column=1, row=5)
 
 janela.mainloop()
 

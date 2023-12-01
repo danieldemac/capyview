@@ -1,12 +1,12 @@
 @extends('voyager::master')
-@section('page_title', 'Página criada - tabela_rafael')
+@section('page_title', 'Página criada - tabela_teste')
 
 @section('page_header')
-    <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome tabela_rafael</h1>
-    <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-tabela_rafael" id="bt-create-tabela_rafael">
+    <h1 class="page-title"><i class="icon voyager-receipt"></i>Nome tabela_teste</h1>
+    <button class="btn btn-success btn-sm" type="button" data-toggle="modal" data-target="#modal-create-tabela_teste" id="bt-create-tabela_teste">
         <i class="voyager-plus"></i> Adicionar
     </button>
-    <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#model-delete-tabela_rafaels" id="bt-delete-tabela_rafaels" disabled="true">
+    <button class="btn btn-danger btn-sm" type="button" data-toggle="modal" data-target="#model-delete-tabela_testes" id="bt-delete-tabela_testes" disabled="true">
         <i class="voyager-trash"></i> Exclusão em massa
     </button>
 @stop
@@ -19,7 +19,7 @@
             <div class="card">
                 <div class="card-body">
                     <div class="card-title"></div>
-                    <table id="dt-tabela_rafaels" class="table table-bordered table-hover">
+                    <table id="dt-tabela_testes" class="table table-bordered table-hover">
                         <thead>
 						<tr>
 							<th>Name</th>
@@ -35,16 +35,16 @@
     </div>
 </div>
 
-<div class="modal fade" id="modal-create-tabela_rafael" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade" id="modal-create-tabela_teste" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <section id="loading-create-tabela_rafael"><div id="loading-content-create-tabela_rafael"></div></section>
+        <section id="loading-create-tabela_teste"><div id="loading-content-create-tabela_teste"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Adicionar tabela_rafaels</h4><hr></div>
+            <div class="modal-header"><h4 class="modal-title">Adicionar tabela_testes</h4><hr></div>
             <div class="modal-body">
                 <div class="alert alert-danger"  role="alert" style="display: none;"></div>
                 <div class="alert alert-success" role="alert" style="display: none;"></div>
  
-                <form id="form-create-tabela_rafael" enctype="multipart/form-data"><form id="form-create-tabela_rafael" enctype="multipart/form-data">
+                <form id="form-create-tabela_teste" enctype="multipart/form-data"><form id="form-create-tabela_teste" enctype="multipart/form-data">
 			<div class="form-row">
 				<div class="form-group mb-3">
 					<label class="form-label" for="name">Name*</label>
@@ -75,34 +75,34 @@
             <div class="modal-footer">
                 <hr>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Fechar</button>
-                <button type="button" class="btn btn-success" id="submit-update-create-tabela_rafael">Salvar</button>
+                <button type="button" class="btn btn-success" id="submit-update-create-tabela_teste">Salvar</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal" id="model-delete-tabela_rafael">
+<div class="modal" id="model-delete-tabela_teste">
     <div class="modal-dialog">
         <section id="loading-delete-id"><div id="loading-content-delete-id"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Excluir tabela_rafael</h4><hr></div>
-            <div class="modal-body"><p>Deseja <b>EXCLUIR</b> o tabela_rafael ?</p></div>
+            <div class="modal-header"><h4 class="modal-title">Excluir tabela_teste</h4><hr></div>
+            <div class="modal-body"><p>Deseja <b>EXCLUIR</b> o tabela_teste ?</p></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="submit-delete-tabela_rafael">Sim</button>
+                <button type="button" class="btn btn-success" id="submit-delete-tabela_teste">Sim</button>
                 <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal" id="model-delete-tabela_rafaels">
+<div class="modal" id="model-delete-tabela_testes">
     <div class="modal-dialog">
         <section id="loading-delete-ids"><div id="loading-content-delete-ids"></div></section>
         <div class="modal-content">
-            <div class="modal-header"><h4 class="modal-title">Excluir tabela_rafael</h4><hr></div>
-            <div class="modal-body"><p>Tem certeza que deseja <b>EXCLUIR</b> a(s) tabela_rafael(s) ?</p></div>
+            <div class="modal-header"><h4 class="modal-title">Excluir tabela_teste</h4><hr></div>
+            <div class="modal-body"><p>Tem certeza que deseja <b>EXCLUIR</b> a(s) tabela_teste(s) ?</p></div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger" id="submit-delete-tabela_rafaels">Sim</button>
+                <button type="button" class="btn btn-danger" id="submit-delete-tabela_testes">Sim</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Não</button>
             </div>
         </div>
@@ -113,7 +113,7 @@
     <div class="modal-dialog">
         <div class="modal-content" >
             <div class="modal-header"><h4 class="modal-title">Visualizar Arquivo</h4><hr></div>
-            <div class="modal-body"><div id="tabela_rafael-view-file"></div></div>
+            <div class="modal-body"><div id="tabela_teste-view-file"></div></div>
             <div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button></div>
         </div>
     </div>
@@ -149,12 +149,12 @@
     <script type="text/javascript" src="{{ asset('js/data-tables/pdfmake.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/data-tables/vfs_fonts.js') }}"></script>
     
-    <script src="{{ asset('js/tabela_rafaels.js') }}" type="text/javascript"></script>
+    <script src="{{ asset('js/tabela_testes.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-datepicker.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/bootstrap-datepicker.pt.min.js') }}" type="text/javascript"></script>
 
     <script>
-        $("#tabela_rafael-data").datepicker({
+        $("#tabela_teste-data").datepicker({
             daysOfWeekDisabled: [0, 7],
             todayHighlight: false,
             language: 'pt-BR',

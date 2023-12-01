@@ -1,30 +1,30 @@
 <?
-use App\Http\Controllers\tabela_rafaelController;
+use App\Http\Controllers\tabela_testeController;
 
 // Rota para exibir o formulário de criação do modelo
-Route::get('/tabela_rafaels/create', function () {
-    $content = "Rota tabela_rafael criada.";
-    return view('tabela_rafaels.create');
-})->name('tabela_rafaels.create');
+Route::get('/tabela_testes/create', function () {
+    $content = "Rota tabela_teste criada.";
+    return view('tabela_testes.create');
+})->name('tabela_testes.create');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
     
-// Rota para armazenar um novo tabela_rafael criado
-Route::post('/tabela_rafaels', [tabela_rafaelController::class, 'store'])->name('tabela_rafaels.store');
+// Rota para armazenar um novo tabela_teste criado
+Route::post('/tabela_testes', [tabela_testeController::class, 'store'])->name('tabela_testes.store');
 
-// Rota para exibir detalhes de um tabela_rafael específico
-Route::get('/tabela_rafaels/{id}', [tabela_rafaelController::class, 'show'])->name('tabela_rafaels.show');
+// Rota para exibir detalhes de um tabela_teste específico
+Route::get('/tabela_testes/{id}', [tabela_testeController::class, 'show'])->name('tabela_testes.show');
 
-// Rota para exibir o formulário de edição de um tabela_rafael específico
-Route::get('/tabela_rafaels/{id}/edit', [tabela_rafaelController::class, 'edit'])->name('tabela_rafaels.edit');
+// Rota para exibir o formulário de edição de um tabela_teste específico
+Route::get('/tabela_testes/{id}/edit', [tabela_testeController::class, 'edit'])->name('tabela_testes.edit');
 
-// Rota para atualizar um tabela_rafael específico
-Route::put('/tabela_rafaels/{id}', [tabela_rafaelController::class, 'update'])->name('tabela_rafaels.update');
-Route::patch('/tabela_rafaels/{id}', [tabela_rafaelController::class, 'update']);
+// Rota para atualizar um tabela_teste específico
+Route::put('/tabela_testes/{id}', [tabela_testeController::class, 'update'])->name('tabela_testes.update');
+Route::patch('/tabela_testes/{id}', [tabela_testeController::class, 'update']);
 
-// Rota para excluir um tabela_rafael específico
-Route::delete('/tabela_rafaels/{id}', [tabela_rafaelController::class, 'destroy'])->name('tabela_rafaels.destroy');
+// Rota para excluir um tabela_teste específico
+Route::delete('/tabela_testes/{id}', [tabela_testeController::class, 'destroy'])->name('tabela_testes.destroy');
 
 });
