@@ -16,38 +16,9 @@ Com o **Capyview**, você pode:
 - Criar interfaces de usuário de maneira eficiente.
 - Definir rotas no Laravel de forma automática.
 
-  ## Estrutura do Projeto
-
-Este repositório está organizado da seguinte forma:
-
-- `.github/ISSUE_TEMPLATE`: Diretório que contém modelos de issues.
-- `PGT-CapyView` - Pasta com primeira versão do programa.
-- `__pycache__`: Diretório utilizado pelo Python para armazenar arquivos de cache contendo versões compiladas (bytecode) de módulos Python, visando melhorar o desempenho de importação.
-- `css`: Pasta com Styles CSS do site.
-- `html`: Pasta com outros HTML do site.
-- `images`: Pasta que contém a logo do Capyview.
-- `implementação_testes`: Pasta que inclui testes de novas funcionalidades.
-- `js`: Pasta para arquivos JS.
-- `modelos`: Pasta que contém modelos usados como base para a criação de views e rotas.
-- `resultado`: Pasta que contém os resultados das automações.
-- `CODE_OF_CONDUCT.md`: Arquivo que foi para refletir as diretrizes de conduta para contribuição no projeto.
-- `CONTRIBUTING.md`: Arquivo que contém informações sobre como contribuir para o projeto.
-- `LICENSE`: [Licença Apache 2.0](https://github.com/danieldemac/capyview/blob/main/LICENSE).
-- `README.md`: Documento que você está lendo agora, contendo informações sobre o projeto.
-- `SECURITY.md`: Arquivo que contem informações sobre políticas de segurança.
-- `funcao_baixoModel.py`: Arquivo que contém a função para a criação da parte inferior do model
-- `funcao_html.py`: Arquivo que contém a função para a criação do HTML.
-- `funcao_js.py`: Arquivo que contém a função para a criação do JavaScript.
-- `funcao_model.py`: Arquivo que contém a função para a criação da parte superior do model.
-- `funcao_query_model.py`: Arquivo que contém a função para a criação das querys no model.
-- `funcao_rota.py`: Arquivo que contém a função para a criação da rota.
-- `funcoes_repositorio.py`: Arquivo que serve como repositório para todas as funções.
-- `index.html`: Html com site base para interação com usuário.
-- `main.py`: Arquivo principal do programa.
-
 ## Como Usar
 
-No momento o programa funciona apenas no terminal pelo Arquivo `main.py`. Você deve escreve o comando para criação de tabelas dentro de um arquivo chamado `modelos/tabela.php`.
+No momento o programa funciona no terminal pelo Arquivo `main.py` na pasta base_capyview ou no arquivo `main.py` na pasta tkinter_capyview. No primeiro caso vocÊ deve escreve o comando para criação de tabelas dentro de um arquivo chamado `modelos/tabela.php`.
 Exemplo de comando:
 ```sql
 CREATE TABLE tabela_testes
@@ -63,6 +34,8 @@ CREATE TABLE tabela_testes
 )
 ```
 Ao rodar o programa ele vai criar uma base para views, rotas e controllers usando essa tabela como base. Mais funcionalidades e modelos estão sendo elaborados para esse projeto.
+
+O segundo arquivo `main.py` (na pasta tkinter_capyview) possui uma interface gráfica na qual você pode colocar o mesmo comando de criação de tabela para criar os arquivos.
 
 ## Site do Projeto disponivel pelo Netlify!
 
